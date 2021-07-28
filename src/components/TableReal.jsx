@@ -9,6 +9,7 @@ import{ Table,
  TableHead ,
  TableRow ,
  Typography,
+ TableSortLabel,
  Paper} from '@material-ui/core';
 import { borderRadius, maxWidth } from '@material-ui/system';
 
@@ -60,17 +61,24 @@ const useStyles = makeStyles((theme)=>({
   }));
 
 
-function TableReal() {
+function TableReal(props) {
     const classes = useStyles()
     return (
         <>
+    
            <TableContainer component={Paper} className = {classes.tableContainer}> 
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
             
-            <TableCell className={classes.tableHeaderCell }>No</TableCell>
-            <TableCell className={classes.tableHeaderCell } >TYPE</TableCell>
+            <TableCell className={classes.tableHeaderCell }><TableSortLabel 
+            keys="name"
+            active={"name" === "name"}
+            direction="asc"
+            //onClick={createSortHandler("name")}
+            >No</TableSortLabel>
+            </TableCell>
+            <TableCell className={classes.tableHeaderCell } >DATE</TableCell>
             <TableCell className={classes.tableHeaderCell }>TITLE</TableCell>
             <TableCell className={classes.tableHeaderCell }>USER</TableCell>
             <TableCell className={classes.tableHeaderCell } >MODE</TableCell>
@@ -103,8 +111,7 @@ function TableReal() {
         </TableBody>
       </Table>
     </TableContainer> 
-   <h3  className='footer'>Total Reports {max}</h3>
-        </>
+    </>
     )
 }
 

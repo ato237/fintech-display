@@ -2,13 +2,13 @@ import React from 'react'
 import MOCK_DATA from './MOCK_DATA.json'
 import './footer.css'
 
-function Footer() {
+function Downbar() {
 
     return (
         <div className = 'footer'>
-          <h4> TOTAL {MOCK_DATA.length} REPORTS</h4>
+          <h4> TOTAL REPORTS</h4>
         </div>
     )
 }
 
-export default Footer
+export default Downbar
