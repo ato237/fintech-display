@@ -1,12 +1,11 @@
 import './App.css';
-import BasicTable from './components/BasicTable';
 import Footer from './components/Footer';
+import TableReal from './components/TableReal';
 
 function App() {
   return (
     <div className="App">
-      <BasicTable/>
-      <Footer/>
+      <TableReal/>
     </div>
   );
 }

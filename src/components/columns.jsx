@@ -7,9 +7,10 @@ export const COLUMNS = [
     },
     {
         Header: 'DATE',
-        accessor: 'DATE'
+        accessor: 'PERIOD'
 
     },
+  
     {
         Header: 'TYPE',
         accessor: 'TYPE'
@@ -36,8 +37,9 @@ export const COLUMNS = [
 
     },
     {
-        Header: 'PERIOD',
-        accessor: 'PERIOD'
+        Header: 'FILE NAME',
+        accessor: 'DATE'
 
     },
+  
 ]
