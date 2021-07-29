@@ -4,6 +4,7 @@ import TableReal from './components/TableReal';
 import Topbar from './components/topbar/Topbar'
 import Sidebar from './components/sidebar/Sidebar'
 import UpInput from './components/UpInput';
+import TableTest from './components/TableTest'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <UpInput/>
             <TableReal/>
             <Downbar/>
+            <TableTest/>
             </div>
           
           </div>
