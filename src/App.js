@@ -1,5 +1,4 @@
 import './App.css';
-import Downbar from './components/Downbar';
 import TableReal from './components/TableReal';
 import Topbar from './components/topbar/Topbar'
 import Sidebar from './components/sidebar/Sidebar'
@@ -15,7 +14,6 @@ function App() {
           <div className='others'>
             <UpInput/>
             <TableReal/>
-            <Downbar/>
             <TableTest/>
             </div>
           
