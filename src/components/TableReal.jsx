@@ -99,9 +99,12 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
-  iconbutton: {
+  icon: {
+    display: "flex",
+    justifyItems: "center",
+    position: "absolute",
+    right: "10px",
     cursor: "pointer",
-    outline: "3px",
     backgroundColor: "#06c23e",
     color: "white",
   },
@@ -122,7 +125,7 @@ const headCells = [
   { id: "results", label: "RESULTS" },
   { id: "period", label: "period" },
   { id: "file", label: "File" },
-  { id: "actions", label: "ACTIONS" },
+  { id: "ACTIONS", label: "ACTIONS" },
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -358,6 +361,7 @@ function TableReal(props) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => {
                 const isItemSelected = isSelected(row.id);
+                const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
@@ -370,7 +374,10 @@ function TableReal(props) {
                     selected={isItemSelected}
                   >
                     <TableCell padding="checkbox">
-                      <Checkbox checked={isItemSelected} />
+                      <Checkbox
+                        checked={isItemSelected}
+                        inputProps={{ "aria-labelledby": labelId }}
+                      />
                     </TableCell>
                     <TableCell>{row.id}</TableCell>
                     <TableCell>{row.date}</TableCell>
@@ -399,10 +406,16 @@ function TableReal(props) {
                     <TableCell>{row.file}</TableCell>
                     <TableCell>
                       {" "}
-                      <CachedIcon className={classes.iconbutton} />{" "}
-                      <DeleteIcon className={classes.iconbutton} />
-                      <PrintIcon className={classes.iconbutton} />
-                      <FileCopyIcon className={classes.iconbutton} />
+                      <IconButton>
+                        <CachedIcon className={classes.icon} />{" "}
+                      </IconButton>
+                      <IconButton>
+                        <DeleteIcon className={classes.icon} />
+                      </IconButton>
+                      <PrintIcon className={classes.icon} />
+                      <IconButton>
+                        <FileCopyIcon className={classes.icon} />
+                      </IconButton>
                     </TableCell>
                   </TableRow>
                 );
